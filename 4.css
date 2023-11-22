@@ -1,0 +1,20 @@
+.school {
+    text-indent: 30px;
+    letter-spacing: 20px;
+}
+p {
+    text-transform: capitalize;
+}
+a {
+    text-decoration: none;
+    color: #000;
+}
+body {
+    background-color: #aaa;
+    font-family: 돋움;
+    font-size: 17px;
+}
+* {
+    margin: 0;
+    padding: 0;
+}

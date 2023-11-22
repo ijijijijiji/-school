@@ -1,0 +1,33 @@
+@import url('https://fonts.googleapis.com/css2?family=Monoton&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+}
+ul, li {
+    list-style: none;
+}
+body {
+    font-size: 15px;
+    font-family: Monoton;
+}
+#gnb li {
+    display: inline;
+}
+#gnb li a {
+    display: inline-block;
+    background: #c00;
+    color: #fff;
+    /* w150 */
+    width: 150px;
+    /* h40 */
+    height: 40px;
+    text-align: center;
+    line-height: 40px;
+    text-decoration: none;
+    transition: all 0.6s;
+}
+#gnb li a:hover {
+    background-color: #369;
+    text-decoration: underline;
+}

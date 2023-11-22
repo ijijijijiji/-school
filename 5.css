@@ -1,0 +1,32 @@
+body {
+    font-size: 14px;
+}
+p {
+    width: 550px;
+    padding: 5px;
+    margin: 50px;
+}
+.p1 {
+    border: 5px solid #123456;
+}
+.p2 {
+    border: 5px dotted #123456;
+}
+.p3 {
+    border: 5px dashed #123456;
+}
+.p4 {
+    border: 10px groove #06c;
+}
+.p5 {
+    border: 10px ridge #f06c;
+}
+.p6 {
+    border: 10px inset #0c3;
+}
+.p7 {
+    border: 10px outset #c63;
+}
+.p8 {
+    border: 10px double #ddd;
+}
