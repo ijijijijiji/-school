@@ -4,26 +4,95 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <script src="js/jquery-1.8.1.min.js"></script>
     <script>
-        // int num = 100;
-        // char c = 'a'
-        // String str = "hello"
+        $(document).ready(function(){
+            // id가 list인 <li> 요소 중 홀수 인덱스만 선택 후 배경색을 노란색
+            $("#list1 li:odd").css("background-color", "yellow");
+            // 짝수만 배경색을 회색
+            $("#list1 li:even").css("background-color", "grey");
+            // list1에서 첫 번째 요소 글자색 빨간색
+            $("#list1 li:first").css("background-color", "red");
+            // 마지막 요소 글자색 초록색
+            $("#list1 li:last").css("background-color", "green");
+            // li 요소 중에 인덱스 번호가 1인 즉, 두번째 요소 폰트스타일을 이탤릭
+            $("list1 li").eq(1).css("font-style","italic");
+            $("#list1 li:eq(2)").css("font-weight", "bold");
+            // li 요소 중 3번째 요소 이전것들만 2px dotted skyblue
+            $("#list1 li:lt(2)").css("border","2px dotted skyblue");
+            // li 요소 중 3번째 요소 이후것들만 2px dotted skyblue
+            $("#list1 li:gt(2)").css("border","2px dotted purple");
+            // &lt; -> '<'  &gt; -> '>'
 
-        var firstNum = 10;
-        var ch = 'a';
-        var str = "hello";
+            // list2
+            // 2의 배수인 자식 요소인 li만 배경색을 오렌지
+            $("#list2 li:nth-child(2n)").css("background-color", "orange");
+            // "리스트11"이 포함된 요소만 글자색을 빨간색
+            $("#list2 li:conrains('리스트11')").css("color", "red");
+            // <span> 태그를 갖고 있는 li 요소만 글씨색을 aqua
+            $("#list2 li:has('span')").css("color", "aqua");
+            // class가 theObj의 li 요소만 폰트사이즈 20px
+            $("#list2 li").filter('.theObj').css("font-size", "20px");
+            // <a> 태그를 갖고 있는 li 요소만 배경색을 빨간색
+            $("#list2 li").find("a").css("background-color", "red");
 
-        // let : 변수 const : 상수
 
-        let num1 = 10;
-        let num2 = 20;
+            // class 값이 theTitle의 요소를 새로운 요소로 변경
+            $(".theTitle").html("<a href='#'>요소 객체 조작</a>");
+            // class 값이 obj1인 요소에 텍스트를 새로운 텍스트로 변경
+            $(".obj1").text("리스트_2");
+            // id가 list3의 요소에 마지막 위치에 새로운 요소(li) 추가
+            $("#list3").append("<li>list_6</li>");
+            // id가 list3의 요소에 처음 위치에 새로운 요소(li) 추가
+            $("#list3").prepend("<li>list_1</li>");
+            // id가 list3의 요소에 5번째 li요소 이전에 새로운 요소(li) 추가
+            $("<li>insertBefore</li>").insertBefore($("#list3 li").eq(4));
+            // id가 list3의 요소에 6번째 li요소 이후에 새로운 요소(li) 추가
+            $("<li>insertBefore</li>").insertAfter($("#list3 li").eq(5));
 
-        document.write(ch);
-        document.write(str);
-        document.write(num1+num2);
+            // class가 obj1인 요소를 복제해서 id가 list3인 요소 마지막에 추가
+            $(".obj1").clone().appendTo("#list3");
+            // id가 list3인 요소의 하위 요소중 첫번째 요소 삭제
+            $("#list3 li").eq(0).remove();
+            // list3의 하위요소 중 첫 번째 요소의 클래스값을 변경
+            $("#list3 li").eq(0).attr("class", "obj2");
+            $(".obj2").css("background-color", "yellow");
+            // list3의 하위요소 중 두 번째 요소에 클래스값 추가
+            $("#list3 li").eq(1).addClass("obj3");
+            $(".obj3").css("color", "red");
+        });
     </script>
 </head>
 <body>
-    
+    <div id="wrap">
+        <h1>탐색 선택자 및 html 조작</h1>
+        <h2>탐색 선택자</h2>
+        <ul id="list1">
+            <li>리스트1</li>
+            <li>리스트2</li>
+            <li>리스트3</li>
+            <li>리스트4</li>
+            <li>리스트5</li>
+            <li>리스트6</li>
+            <li>리스트7</li>
+        </ul>
+        <ul id="list2">
+            <li>리스트8</li>
+            <li class="theObj">리스트9</li>
+            <li><span>리스트10</span></li>
+            <li>리스트11</li>
+            <li><a href="#">리스트12</a></li>
+            <li>리스트13</li>
+            <li>리스트14</li>
+        </ul>
+        
+        <h2 class="theTitle">html 조작</h2>
+        <ul id="list3">
+            <li class="obj1">list_2</li>
+            <li>list_3</li>
+            <li>list_4</li>
+            <li>list_5</li>
+        </ul>list_
+    </div>
 </body>
 </html>
