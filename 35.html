@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        // 생성자 함수
+        // - 특정 속성과 메서드를 가진 객체를 생성할 수 있음
+        // - 속성과 관련 메서드를 직접 사용자가 정의하여 함수화하고 이후 new 연산자를 사용하여 해당 함수명을 호출하면
+        //   미리 정의된 속성과 메서드를 지닌 새로운 객체를 만들 수 있음
+
+        // 파라미터가 3개인 생성자 함수를 생성
+        function comFactory(cpuInfo, ramInfo, hddInfo) {
+            this.cpu = cpuInfo
+            this.ram = ramInfo
+            this.hdd = hddInfo
+
+            this.totInfo = function() {
+                document.write("제조업체 : 성일전자 <br>")
+                document.write("시스템 종류 : 64bit OS <br>")
+            }
+        }
+
+        // new 연산자를 사용하여 새 객체를 생성하였으며, 객체명으로 gamingCom으로 부여함
+        let gamingCom = new comFactory("5.0GHZ", "32.0GB", "1TB")
+        document.write(gamingCom.cpu + "<br>")
+        document.write(gamingCom.ram + "<br>")
+        gamingCom.totInfo()
+
+        let officeCom = new comFactory("3.2GHZ", "8.0GB", "512GB")
+        document.write(officeCom.cpu + "<br>")
+        document.write(officeCom.ram + "<br>")
+        officeCom.totInfo()
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

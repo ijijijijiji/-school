@@ -5,13 +5,13 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <script>
-        let myAge = 17;
-        const adultAge = 20;
+        let result;
+        let dan = prompt("출력한 단?", 2)
 
-        if(myAge >= adultAge) {
-            document.write("성인");
-        }else {
-            document.write("미성년자");
+        document.write("<h1>" + dan + "단</h1>")
+        for(let i=1; i<=9; i++) {
+            result = i * dan;
+            document.write("dan * " + i + result + "<br>")
         }
     </script>
 </head>

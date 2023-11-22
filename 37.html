@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        
+        function thrFnc() {
+            alert("JavaScript!!!")
+        }
+        
+        function clickBtn() {
+            let myBtn = document.getElementById("btn1")
+            myBtn.onclick = thrFnc
+        }
+        function clickBtn2() {
+            let myBtn2 = document.getElementById("btn2")
+            myBtn2.onclick = thrFnc
+        }
+
+        if(window.addEventListener) { // 표준 방식 브라우저
+            window.addEventListener("load",clickBtn,false)
+            window.addEventListener("load",clickBtn2,false)
+        } else if(window.attachEvent) { // 비표준 방식 브라우저 (IE 8 이하)
+            window.attachEvent("onload",clickBtn)
+            window.attachEvent("onload",clickBtn2)
+        }
+    </script>
+</head>
+<body>
+    <butto id="btn1">버튼1</butto>
+    <butto id="btn2">버튼2</butto>
+</body>
+</html>
